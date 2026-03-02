@@ -1,0 +1,106 @@
+/* Genel Ayarlar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #0f0f0f; /* Koyu arka plan */
+    color: white;
+    overflow-x: hidden;
+}
+
+/* Arka Plandaki Turuncu Işıltılar */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 10% 20%, rgba(255, 140, 0, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(255, 69, 0, 0.15) 0%, transparent 40%);
+    z-index: -1;
+}
+
+/* Header ve Logo */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+}
+
+.logo img {
+    height: 60px; /* Logo büyüklüğü */
+    transition: transform 0.3s;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ff8c00; /* Turuncu vurgu */
+}
+
+/* Hero Bölümü (Ana Görsel) */
+.hero {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.highlight {
+    color: #ff8c00;
+}
+
+.btn {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 10px;
+    transition: 0.3s;
+    /* Dokunmatik cihazlarda tıklama alanını netleştirir */
+    touch-action: manipulation;
+}
+
+.join-btn {
+    background: #ff8c00;
+    color: white;
+}
+
+.join-btn:active {
+    transform: scale(0.95); /* Dokunma efekti */
+}
+
+/* Mobil Uyumluluk */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+    }
+    nav ul {
+        margin-top: 20px;
+    }
+}
